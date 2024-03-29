@@ -5,7 +5,7 @@
     ".": "./main.ts"
   },
   "tasks": {
-    "start": "deno run --allow-read=. main.ts",
+    "start": "deno run --allow-read=.,deno.jsonc main.ts",
     "start-local": "deno run  --no-remote main.ts",
     "dev": "deno run--watch main.ts",
     "vendor": "deno vendor ./scripts/deps-to-vendor.ts"
@@ -13,6 +13,7 @@
   "imports": {
     "@std/jsonc": "jsr:@std/jsonc@^0.221.0",
     "@std/path": "jsr:@std/path@^0.221.0",
+    "@std/url": "jsr:@std/url@^0.221.0",
     "https://deno.land/": "./vendor/deno.land/"
   },
   "publish": {
