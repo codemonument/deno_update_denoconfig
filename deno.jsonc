@@ -19,7 +19,8 @@
     "update-version": "deno run --allow-read=.,deno.jsonc, --allow-write=.,deno.jsonc main.ts --config=./deno.jsonc --kv.version=0.1.1",
     "publish": "deno publish",
     "install": "deno install -g --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc jsr:@codemonument/update-denoconfig",
-    "uninstall": "deno uninstall -g update-denoconfig"
+    "uninstall": "deno uninstall -g update-denoconfig",
+    "demo-installed": "update-denoconfig --config=test/demo/deno.jsonc --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\""
   },
   "imports": {
     "@/": "./",
