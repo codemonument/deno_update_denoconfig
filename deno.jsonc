@@ -29,11 +29,12 @@
   },
   "publish": {
     "include": [
+      "./README.md",
+      "./CHANGELOG.md",
+      "./LICENSE",
       "./main.ts",
       "./deno.jsonc",
       "./deno.lock",
-      "./README.md",
-      "./LICENSE",
       "./src"
     ]
   }
