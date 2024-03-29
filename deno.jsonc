@@ -1,9 +1,17 @@
 {
+  "name": "@codemonument/update-denoconfig",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./main.ts"
+  },
   "tasks": {
     "start": "deno run main.ts",
     "start-local": "deno run  --no-remote main.ts",
     "dev": "deno run--watch main.ts",
     "vendor": "deno vendor ./scripts/deps-to-vendor.ts"
   },
-  "importMap": "./vendor/import_map.json"
+  "importMap": "./vendor/import_map.json",
+  "imports": {
+    "@std/jsonc": "jsr:@std/jsonc@^0.221.0"
+  }
 }
