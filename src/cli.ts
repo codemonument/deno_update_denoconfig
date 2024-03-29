@@ -25,12 +25,6 @@ export async function startCli(args: string[] = Deno.args) {
     .action(async (options) => {
       // console.log("cli called with options: ", { options });
 
-      if (!options.config) {
-        throw new Error(
-          "Please provide a deno config file to update with the --config option",
-        );
-      }
-
       if (!options.kv) {
         throw new Error(
           "Please provide at least one key-value pair to update with the --kv.* or --kv.*.* option",
