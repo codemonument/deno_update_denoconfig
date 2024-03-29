@@ -1,8 +1,16 @@
-# update-denoconfig cli & exported function
+# update-denoconfig package: cli & exported function
 
 A package to update deno.json or deno.jsonc config files easily, without loosing comments.
 
-## Usage as CLI
+## Run in deno without installation
+
+Note: Please adjust the `--config` path to your actual deno.jsonc file path and the `--kv` key-value pairs to your desired changes.
+
+```bash
+deno run --allow-read --allow-write jsr:@codemonument/update-denoconfig --config ./deno.jsonc --kv.version=1.0.0 --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"
+```
+
+## Install & use as cli
 
 ```bash
 deno install -g jsr:@codemonument/update-denoconfig
@@ -21,7 +29,7 @@ Result: Updates the input deno.jsonc (or deno.json) file with the provided key-v
 }
 ```
 
-## Usage as exported function
+## Install & use in a build script
 
 ```bash
 deno add @codemonument/update-denoconfig

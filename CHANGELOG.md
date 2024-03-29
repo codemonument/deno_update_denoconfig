@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0 - 2024-03-30
+
+- update README.md with usage without installation
+
 ## 0.1.2 - 2024-03-30
 
 - create a new version of the package for deploying via github actions to fullfill provenance requirements
