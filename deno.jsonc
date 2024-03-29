@@ -14,5 +14,15 @@
     "@std/jsonc": "jsr:@std/jsonc@^0.221.0",
     "@std/path": "jsr:@std/path@^0.221.0",
     "https://deno.land/": "./vendor/deno.land/"
+  },
+  "publish": {
+    "include": [
+      "./main.ts",
+      "./deno.jsonc",
+      "./deno.lock",
+      "./README.md",
+      "./LICENSE",
+      "./src"
+    ]
   }
 }
