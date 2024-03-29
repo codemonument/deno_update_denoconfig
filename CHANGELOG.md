@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 - 2024-03-30
+
+- mark "run without installation" as WIP in README.md
+
 ## 1.0.0 - 2024-03-30
 
 - update README.md with usage without installation

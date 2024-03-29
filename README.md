@@ -2,7 +2,9 @@
 
 A package to update deno.json or deno.jsonc config files easily, without loosing comments.
 
-## Run in deno without installation
+## Run in deno without installation (WIP)
+
+CAUTION: should work, but for some reason there is a problem!
 
 Note: Please adjust the `--config` path to your actual deno.jsonc file path and the `--kv` key-value pairs to your desired changes.
 
