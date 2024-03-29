@@ -16,8 +16,12 @@ export async function startCli() {
       "--kv.* <value:string>",
       "The key-value pairs to update, example: --kv.version=1.0.0 updates the 'version' property to '1.0.0'",
     )
+    .option(
+      "--kv.*.* <value:string>",
+      "The key-value pairs on the second depth to update, example: --kv.version=1.0.0 updates the 'version' property to '1.0.0'",
+    )
     .action((options) => {
-      console.log("cli called with options: ", options);
+      console.log("cli called with options and args: ", { options });
     })
     .parse(Deno.args);
 }
