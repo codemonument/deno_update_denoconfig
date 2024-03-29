@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - '*' # if needed: use ** for also pushing hierarchical tags
+  workflow_dispatch:
 
 jobs:
   publish:
