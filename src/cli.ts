@@ -2,7 +2,7 @@ import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
 import { getSelf_PackageVersion } from "./utils/getSelf_PackageVersion.ts";
 import { updateConfig } from "@/src/features/update-config.ts";
 
-export async function startCli() {
+export async function startCli(args: string[] = Deno.args) {
   await new Command()
     .name("update-denoconfig")
     .version(await getSelf_PackageVersion())
@@ -38,5 +38,5 @@ export async function startCli() {
 
       await updateConfig(options.config, options.kv);
     })
-    .parse(Deno.args);
+    .parse(args);
 }
