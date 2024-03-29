@@ -10,8 +10,9 @@
     "test": "deno test -A",
     // testu = update snapshots while testing
     "testu": "deno test -A -- --update",
-    "dev": "deno run--watch main.ts",
-    "vendor": "deno vendor ./scripts/deps-to-vendor.ts"
+    "vendor": "deno vendor ./scripts/deps-to-vendor.ts",
+    "dry": "deno publish --dry-run",
+    "update-version": "deno run --allow-read=.,deno.jsonc main.ts --config=./deno.jsonc --kv.version=0.1.0"
   },
   "imports": {
     "@/": "./",
