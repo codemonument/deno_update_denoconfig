@@ -1,6 +1,6 @@
 {
   "name": "@codemonument/update-denoconfig",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "exports": {
     ".": "./main.ts"
   },
@@ -12,7 +12,7 @@
     "testu": "deno test -A -- --update",
     "vendor": "deno vendor ./scripts/deps-to-vendor.ts",
     "dry": "deno publish --dry-run",
-    "update-version": "deno run --allow-read=.,deno.jsonc main.ts --config=./deno.jsonc --kv.version=0.1.0"
+    "update-version": "deno run --allow-read=.,deno.jsonc, --allow-write=.,deno.jsonc main.ts --config=./deno.jsonc --kv.version=0.1.0"
   },
   "imports": {
     "@/": "./",
