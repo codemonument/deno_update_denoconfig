@@ -63,3 +63,12 @@ This cli is able to overwrite the whole `publish.include` array via `--kv.publis
 
 I only need it currently to update the `version` property, and I don't want to write a whole new `jq` cli.
 If you need more advanced editing functionality in the cli or in the exported `updateConfig()` function, please open an issue or PR at https://github.com/codemonument/deno_update_denoconfig/issues !
+
+## How to release a new version (for maintainers)
+
+1. Update the version in the `update-version` deno task in `deno.jsonc`
+2. Run that task via `deno task update-version`
+3. Update CHANGELOG.md with the new version and changes
+4. Commit
+5. Tag the commit with the new version
+6. Push the commit and tag => Github Actions will automatically publish the new version to jsr
