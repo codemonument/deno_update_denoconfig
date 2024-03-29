@@ -1,10 +1,10 @@
 import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
-import { getPackageVersion } from "./utils/getPackageVersion.ts";
+import { getSelf_PackageVersion } from "./utils/getSelf_PackageVersion.ts";
 
 export async function startCli() {
   await new Command()
     .name("update-denoconfig")
-    .version(await getPackageVersion())
+    .version(await getSelf_PackageVersion())
     .description(
       "A package to update deno.json or deno.jsonc config files easily, without loosing comments",
     )
