@@ -12,6 +12,7 @@ export async function startCli(args: string[] = Deno.args) {
     .option(
       "-c, --config <file:string>",
       "The deno.json or deno.jsonc file to update",
+      { required: true },
     )
     .option(
       "--kv.* <value:string>",
