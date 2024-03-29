@@ -3,7 +3,7 @@ import { dirname, join, normalize } from "@std/url";
 /**
  * @returns The root url of this package relative to this file.
  */
-export function getPackageRoot() {
+export function getSelfPackageRootUrl() {
   const thisFileUrl = new URL(import.meta.url);
   const thisPackageRoot = normalize(join(dirname(thisFileUrl), "..", ".."));
   return thisPackageRoot;
