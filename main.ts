@@ -1,5 +1,7 @@
 import { startCli } from "./src/cli.ts";
 
+export { updateConfig } from "./src/features/update-config.ts";
+
 /**
  * Note: This main.ts file exports all the functions of this package when imported and starts a cli when import.meta.main is true.
  */
