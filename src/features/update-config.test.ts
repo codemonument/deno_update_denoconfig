@@ -1,4 +1,4 @@
-import { assertNotEquals, assertThrows } from "@std/assert";
+import { assertEquals, assertNotEquals } from "@std/assert";
 import { parse } from "@std/jsonc";
 import { describe, it } from "@std/testing/bdd";
 import { assertSnapshot } from "@std/testing/snapshot";
@@ -6,7 +6,6 @@ import { join } from "@std/url";
 import * as json5 from "json5-writer";
 
 import { getSelf_PackageRootUrl } from "@/src/utils/getSelf_PackageRootUrl.ts";
-import { assertEquals } from "jsr:@std/assert";
 import { updateConfig } from "./update-config.ts";
 
 describe("updateConfig", () => {
