@@ -37,6 +37,10 @@
       "./deno.lock",
       "./src",
       "./vendor"
+    ],
+    "exclude": [
+      "**/*.test.ts",
+      "**/__snapshots__"
     ]
   }
 }
