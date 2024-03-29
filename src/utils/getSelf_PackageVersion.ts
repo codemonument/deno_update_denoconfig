@@ -1,17 +1,17 @@
-import { dirname, join, normalize } from "@std/url";
 import { parse } from "@std/jsonc";
+import { join } from "@std/url";
 import { z } from "zod";
+import { getSelf_PackageRootUrl } from "./getSelf_PackageRootUrl.ts";
 
 /**
  * @returns The version of this package as defined in the deno.jsonc file in the root of this package.
  *
  * Caution: This function is needed because when the package is used as a dependency, the CWD is the project that uses this package, not this package.
  */
-export async function getPackageVersion() {
-  // import.meta.url should be the path to this.getPackageVersion.ts file
+export async function getSelf_PackageVersion() {
   // this code gets the version of this package from the deno.jsonc config file in the root of this package
-  const thisPackage = normalize(join(dirname(import.meta.url), "..", ".."));
-  const thisPackageDenoconfig = join(thisPackage, "deno.jsonc");
+  const thisPackageRoot = getSelf_PackageRootUrl();
+  const thisPackageDenoconfig = join(thisPackageRoot, "deno.jsonc");
 
   const thisDenoconfig = parse(await Deno.readTextFile(thisPackageDenoconfig));
 
