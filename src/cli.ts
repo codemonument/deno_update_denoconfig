@@ -1,5 +1,6 @@
 import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
 import { getSelf_PackageVersion } from "./utils/getSelf_PackageVersion.ts";
+import { updateConfig } from "@/src/features/update-config.ts";
 
 export async function startCli() {
   await new Command()
@@ -20,8 +21,22 @@ export async function startCli() {
       "--kv.*.* <value:string>",
       `The key-value pairs on the second depth to update, example: --kv.tasks.echo="echo \\"Hello World!\\""`,
     )
-    .action((options) => {
-      console.log("cli called with options and args: ", { options });
+    .action(async (options) => {
+      // console.log("cli called with options: ", { options });
+
+      if (!options.config) {
+        throw new Error(
+          "Please provide a deno config file to update with the --config option",
+        );
+      }
+
+      if (!options.kv) {
+        throw new Error(
+          "Please provide at least one key-value pair to update with the --kv.* or --kv.*.* option",
+        );
+      }
+
+      await updateConfig(options.config, options.kv);
     })
     .parse(Deno.args);
 }
