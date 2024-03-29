@@ -5,13 +5,14 @@
     ".": "./main.ts"
   },
   "tasks": {
-    "start": "deno run main.ts",
+    "start": "deno run --allow-read=. main.ts",
     "start-local": "deno run  --no-remote main.ts",
     "dev": "deno run--watch main.ts",
     "vendor": "deno vendor ./scripts/deps-to-vendor.ts"
   },
   "imports": {
-    "https://deno.land/": "./vendor/deno.land/",
-    "@std/jsonc": "jsr:@std/jsonc@^0.221.0"
+    "@std/jsonc": "jsr:@std/jsonc@^0.221.0",
+    "@std/path": "jsr:@std/path@^0.221.0",
+    "https://deno.land/": "./vendor/deno.land/"
   }
 }
