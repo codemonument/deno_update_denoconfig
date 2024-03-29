@@ -5,9 +5,19 @@ export async function startCli() {
   await new Command()
     .name("update-denoconfig")
     .version(await getPackageVersion())
-    .description("A simple hello world example.")
-    .action(() => {
-      console.log("Hello, world!");
+    .description(
+      "A package to update deno.json or deno.jsonc config files easily, without loosing comments",
+    )
+    .option(
+      "-c, --config <file:string>",
+      "The deno.json or deno.jsonc file to update",
+    )
+    .option(
+      "--kv.* <value:string>",
+      "The key-value pairs to update, example: --kv.version=1.0.0 updates the 'version' property to '1.0.0'",
+    )
+    .action((options) => {
+      console.log("cli called with options: ", options);
     })
     .parse(Deno.args);
 }
