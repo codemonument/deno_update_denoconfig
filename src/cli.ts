@@ -3,7 +3,7 @@ import { getSelf_PackageVersion } from "./utils/getSelf_PackageVersion.ts";
 import { updateConfig } from "@/src/features/update-config.ts";
 
 export async function startCli(args: string[] = Deno.args) {
-  await new Command()
+  const command = new Command()
     .name("update-denoconfig")
     .version(await getSelf_PackageVersion())
     .description(
@@ -22,8 +22,14 @@ export async function startCli(args: string[] = Deno.args) {
       "--kv.*.* <value:string>",
       `The key-value pairs on the second depth to update, example: --kv.tasks.echo="echo \\"Hello World!\\""`,
     )
+    .allowEmpty()
     .action(async (options) => {
       // console.log("cli called with options: ", { options });
+
+      if (!options.config) {
+        command.showHelp();
+        return;
+      }
 
       if (!options.kv) {
         throw new Error(
@@ -32,6 +38,7 @@ export async function startCli(args: string[] = Deno.args) {
       }
 
       await updateConfig(options.config, options.kv);
-    })
-    .parse(args);
+    });
+
+  await command.parse(args);
 }
