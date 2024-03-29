@@ -12,6 +12,7 @@
       "jsr:@std/path@^0.221.0": "jsr:@std/path@0.221.0",
       "jsr:@std/testing@^0.221.0": "jsr:@std/testing@0.221.0",
       "jsr:@std/url@^0.221.0": "jsr:@std/url@0.221.0",
+      "npm:deepmerge-ts@^5.1.0": "npm:deepmerge-ts@5.1.0",
       "npm:json5-writer@^0.2.0": "npm:json5-writer@0.2.0",
       "npm:zod@^3.22.4": "npm:zod@3.22.4"
     },
@@ -1324,6 +1325,10 @@
         "integrity": "sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==",
         "dependencies": {}
       },
+      "deepmerge-ts@5.1.0": {
+        "integrity": "sha512-eS8dRJOckyo9maw9Tu5O5RUi/4inFLrnoLkBe3cPfDMx3WZioXtmOew4TXQaxq7Rhl4xjDtR7c6x8nNTxOvbFw==",
+        "dependencies": {}
+      },
       "define-property@0.2.5": {
         "integrity": "sha512-Rr7ADjQZenceVOAKop6ALkkRAmH1A4Gx9hV/7ZujPUN2rkATqFO0JZLZInbAjpZYoJ1gUx8MRMQVkYemcbMSTA==",
         "dependencies": {
@@ -2160,6 +2165,7 @@
       "jsr:@std/path@^0.221.0",
       "jsr:@std/testing@^0.221.0",
       "jsr:@std/url@^0.221.0",
+      "npm:deepmerge-ts@^5.1.0",
       "npm:json5-writer@^0.2.0",
       "npm:zod@^3.22.4"
     ]

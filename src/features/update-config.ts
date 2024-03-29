@@ -1,5 +1,6 @@
 import * as json5 from "json5-writer";
 import * as jsonc from "@std/jsonc";
+import { deepmerge } from "deepmerge-ts";
 
 /**
  * Updates an existing deno.jsonc (or deno.json) file with the provided 'updatedConfig',
@@ -32,15 +33,11 @@ export async function updateConfig(
     throw new Error("Expected a root object for deno.jsonc content");
   }
 
-  denoJson5Parsed.write(
-    {
-      // import all the properties from existing deno.jsonc, so that json5-writer doesn't remove them
-      ...denoJsoncParsed,
-      // update the properties we want to update
-      //   version: Deno.args[0],
-      ...updatedConfig,
-    },
-  );
+  // import all the properties from existing deno.jsonc, so that json5-writer doesn't remove them
+  // merge them with the properties we want to update
+  const newConfig = deepmerge(denoJsoncParsed, updatedConfig);
+
+  denoJson5Parsed.write(newConfig);
 
   // for debugging, in case we need to go into the AST in the future:
   //   output all ast paths there are
