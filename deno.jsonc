@@ -13,7 +13,6 @@
     // seldomly used tasks
     "vendor": "deno vendor ./scripts/deps-to-vendor.ts",
     "demo": "deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc main.ts --config=test/demo/deno.jsonc --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"",
-    "demo-with-bun": "bunx jsr run @codemonument/update-denoconfig -- --config=test/demo/deno.jsonc --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"",
     // publishing tasks
     "dry": "deno publish --dry-run",
     "update-version": "deno run --allow-read=.,deno.jsonc, --allow-write=.,deno.jsonc main.ts --config=./deno.jsonc --kv.version=0.1.1",
