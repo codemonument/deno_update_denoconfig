@@ -1,0 +1,5 @@
+// this config has a comment and it should be preserved while updating!
+{
+  "version": "0.0.1",
+  "tasks": {}
+}
