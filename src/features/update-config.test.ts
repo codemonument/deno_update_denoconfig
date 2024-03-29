@@ -44,9 +44,8 @@ describe("updateConfig", () => {
     );
 
     const initialTestfileContent = await Deno.readTextFile(testfilePath);
-
-    const initialJsoncParse = parse(initialTestfileContent);
     const initialJson5Parse = json5.load(initialTestfileContent);
+    const initialJsoncParse = parse(initialTestfileContent);
     const updateObject = {
       version: "1.0.0",
       tasks: {
