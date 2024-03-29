@@ -5,12 +5,15 @@
     ".": "./main.ts"
   },
   "tasks": {
-    "start": "deno run --allow-read=.,deno.jsonc main.ts --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"",
+    "start": "deno run --allow-read=.,deno.jsonc main.ts ",
     "start-local": "deno run  --no-remote main.ts",
     "test": "deno test -A",
     // testu = update snapshots while testing
     "testu": "deno test -A -- --update",
+    // seldomly used tasks
     "vendor": "deno vendor ./scripts/deps-to-vendor.ts",
+    "demo": "deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc main.ts --config=test/demo/deno.jsonc --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"",
+    // publishing tasks
     "dry": "deno publish --dry-run",
     "update-version": "deno run --allow-read=.,deno.jsonc, --allow-write=.,deno.jsonc main.ts --config=./deno.jsonc --kv.version=0.1.0",
     "publish": "deno publish",
