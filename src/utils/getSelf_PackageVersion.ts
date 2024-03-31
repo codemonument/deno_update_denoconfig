@@ -15,10 +15,10 @@ export async function getSelf_PackageVersion() {
 
   let content = "";
 
-  if (thisPackageDenoconfig.protocol !== "file:") {
-    content = await fetch(thisPackageDenoconfig).then((res) => res.text());
-  } else {
+  if (thisPackageDenoconfig.protocol === "file:") {
     content = await Deno.readTextFile(thisPackageDenoconfig);
+  } else {
+    content = await fetch(thisPackageDenoconfig).then((res) => res.text());
   }
 
   const thisDenoconfig = parse(content);

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 - 2024-03-31
+
+- refine getSelf_PackageVersion code
+
 ## 1.0.2 - 2024-03-31
 
 - make getSelf_PackageVersion function able to load deno.jsonc of this package from a web url
