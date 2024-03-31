@@ -9,7 +9,7 @@ CAUTION: should work, but for some reason there is a problem!
 Note: Please adjust the `--config` path to your actual deno.jsonc file path and the `--kv` key-value pairs to your desired changes.
 
 ```bash
-deno run --allow-read --allow-write jsr:@codemonument/update-denoconfig --config ./deno.jsonc --kv.version=1.0.0 --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"
+deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.5 --config ./deno.jsonc --kv.version=1.0.0 --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"
 ```
 
 ## Install & Use as CLI
@@ -17,13 +17,13 @@ deno run --allow-read --allow-write jsr:@codemonument/update-denoconfig --config
 Install
 
 ```bash
-deno install -g jsr:@codemonument/update-denoconfig
+deno install -g deno install -g --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.5
 ```
 
 Update (with -f flag to force install)
 
 ```bash
-deno install -gf jsr:@codemonument/update-denoconfig
+deno install -gf --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.5
 ```
 
 Run the cli
@@ -89,8 +89,8 @@ If you need more advanced editing functionality in the cli or in the exported `u
 
 ## How to release a new version (for maintainers)
 
-1. Update the version in the `update-version` deno task in `deno.jsonc`
-2. Run that task via `deno task update-version`
+1. Update the version in `deno.jsonc`
+2. Update the version in `README.md` for the installation instructions
 3. Update CHANGELOG.md with the new version and changes
 4. Commit
 5. Tag the commit with the new version
