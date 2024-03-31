@@ -32,6 +32,7 @@
     "deepmerge-ts": "npm:deepmerge-ts@^5.1.0",
     "https://deno.land/": "./vendor/deno.land/",
     "json5-writer": "npm:json5-writer@^0.2.0",
+    "solid-js": "npm:solid-js@^1.8.16",
     "zod": "npm:zod@^3.22.4"
   },
   "publish": {

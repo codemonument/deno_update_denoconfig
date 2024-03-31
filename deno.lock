@@ -14,6 +14,7 @@
       "jsr:@std/url@^0.221.0": "jsr:@std/url@0.221.0",
       "npm:deepmerge-ts@^5.1.0": "npm:deepmerge-ts@5.1.0",
       "npm:json5-writer@^0.2.0": "npm:json5-writer@0.2.0",
+      "npm:solid-js@^1.8.16": "npm:solid-js@1.8.16_seroval@1.0.5",
       "npm:zod@^3.22.4": "npm:zod@3.22.4"
     },
     "jsr": {
@@ -1309,6 +1310,10 @@
           "browserslist": "browserslist@4.23.0"
         }
       },
+      "csstype@3.1.3": {
+        "integrity": "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==",
+        "dependencies": {}
+      },
       "debug@2.6.9": {
         "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
         "dependencies": {
@@ -1953,6 +1958,16 @@
         "integrity": "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==",
         "dependencies": {}
       },
+      "seroval-plugins@1.0.5_seroval@1.0.5": {
+        "integrity": "sha512-8+pDC1vOedPXjKG7oz8o+iiHrtF2WswaMQJ7CKFpccvSYfrzmvKY9zOJWCg+881722wIHfwkdnRmiiDm9ym+zQ==",
+        "dependencies": {
+          "seroval": "seroval@1.0.5"
+        }
+      },
+      "seroval@1.0.5": {
+        "integrity": "sha512-TM+Z11tHHvQVQKeNlOUonOWnsNM+2IBwZ4vwoi4j3zKzIpc5IDw8WPwCfcc8F17wy6cBcJGbZbFOR0UCuTZHQA==",
+        "dependencies": {}
+      },
       "set-value@2.0.1": {
         "integrity": "sha512-JxHc1weCN68wRY0fhCoXpyK55m/XPHafOmK4UWD7m2CI14GMcFypt4w/0+NV5f/ZMby2F6S2wwA7fgynh9gWSw==",
         "dependencies": {
@@ -1997,6 +2012,14 @@
           "source-map": "source-map@0.5.7",
           "source-map-resolve": "source-map-resolve@0.5.3",
           "use": "use@3.1.1"
+        }
+      },
+      "solid-js@1.8.16_seroval@1.0.5": {
+        "integrity": "sha512-rja94MNU9flF3qQRLNsu60QHKBDKBkVE1DldJZPIfn2ypIn3NV2WpSbGTQIvsyGPBo+9E2IMjwqnqpbgfWuzeg==",
+        "dependencies": {
+          "csstype": "csstype@3.1.3",
+          "seroval": "seroval@1.0.5",
+          "seroval-plugins": "seroval-plugins@1.0.5_seroval@1.0.5"
         }
       },
       "source-map-resolve@0.5.3": {
@@ -2167,6 +2190,7 @@
       "jsr:@std/url@^0.221.0",
       "npm:deepmerge-ts@^5.1.0",
       "npm:json5-writer@^0.2.0",
+      "npm:solid-js@^1.8.16",
       "npm:zod@^3.22.4"
     ]
   }
