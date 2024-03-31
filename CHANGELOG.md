@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5 - 2024-03-31
+
+- add complete log level management to the cli
+- query version of cli in action instead of in global scope to have logMode option available
+
 ## 1.0.4 - 2024-03-31
 
 - add force install flag command in readme

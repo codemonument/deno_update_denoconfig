@@ -1,13 +1,37 @@
-import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
-import { getSelf_PackageVersion } from "./utils/getSelf_PackageVersion.ts";
 import { updateConfig } from "@/src/features/update-config.ts";
+import { zodType } from "@codemonument/cliffy-zod-option/zodType";
+import { Command } from "@codemonument/cliffy/command";
+import { z } from "zod";
+import { getSelf_PackageVersion } from "./utils/getSelf_PackageVersion.ts";
+import { cliVersion } from "@/src/utils/global_config.ts";
+import { setLogMode } from "@/src/utils/global_config.ts";
+import { setCliVersion } from "@/src/utils/global_config.ts";
+
+export const LogModeSchema = z.enum([
+  "debug",
+  "verbose",
+  "info",
+  "warn",
+  "error",
+]);
+
+export type LogMode = z.infer<typeof LogModeSchema>;
 
 export async function startCli(args: string[] = Deno.args) {
   const command = new Command()
     .name("update-denoconfig")
-    .version(await getSelf_PackageVersion())
+    .version(() => cliVersion())
     .description(
       "A package to update deno.json or deno.jsonc config files easily, without loosing comments",
+    )
+    .type("LogMode", zodType(LogModeSchema))
+    .option(
+      "-l, --logMode <logMode:LogMode>",
+      "Set the log mode for this cli",
+      {
+        global: true,
+        default: "info" as const,
+      },
     )
     .option(
       "-c, --config <file:string>",
@@ -36,6 +60,10 @@ export async function startCli(args: string[] = Deno.args) {
           "Please provide at least one key-value pair to update with the --kv.* or --kv.*.* option",
         );
       }
+
+      setLogMode(options.logMode);
+      const version = await getSelf_PackageVersion();
+      setCliVersion(version);
 
       await updateConfig(options.config, options.kv);
     });

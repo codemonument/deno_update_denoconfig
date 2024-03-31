@@ -2,6 +2,7 @@ import { parse } from "@std/jsonc";
 import { join } from "@std/url";
 import { z } from "zod";
 import { getSelf_PackageRootUrl } from "./getSelf_PackageRootUrl.ts";
+import { isLogModeDebug } from "./global_config.ts";
 
 /**
  * @returns The version of this package as defined in the deno.jsonc file in the root of this package.
@@ -10,15 +11,20 @@ import { getSelf_PackageRootUrl } from "./getSelf_PackageRootUrl.ts";
  */
 export async function getSelf_PackageVersion() {
   // this code gets the version of this package from the deno.jsonc config file in the root of this package
-  const thisPackageRoot = getSelf_PackageRootUrl();
-  const thisPackageDenoconfig = join(thisPackageRoot, "deno.jsonc");
+  const thisPackageRootUrl = getSelf_PackageRootUrl();
+  const thisPackageDenoconfigUrl = join(thisPackageRootUrl, "deno.jsonc");
 
   let content = "";
 
-  if (thisPackageDenoconfig.protocol === "file:") {
-    content = await Deno.readTextFile(thisPackageDenoconfig);
+  if (isLogModeDebug()) {
+    console.log("thisPackageRootUrl: ", thisPackageRootUrl);
+    console.log("thisPackageDenoconfigUrl: ", thisPackageDenoconfigUrl);
+  }
+
+  if (thisPackageDenoconfigUrl.protocol === "file:") {
+    content = await Deno.readTextFile(thisPackageDenoconfigUrl);
   } else {
-    content = await fetch(thisPackageDenoconfig).then((res) => res.text());
+    content = await fetch(thisPackageDenoconfigUrl).then((res) => res.text());
   }
 
   const thisDenoconfig = parse(content);
