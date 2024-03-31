@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4 - 2024-03-31
+
+- add force install flag command in readme
+
 ## 1.0.3 - 2024-03-31
 
 - refine getSelf_PackageVersion code

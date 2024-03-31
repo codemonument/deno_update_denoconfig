@@ -12,10 +12,23 @@ Note: Please adjust the `--config` path to your actual deno.jsonc file path and 
 deno run --allow-read --allow-write jsr:@codemonument/update-denoconfig --config ./deno.jsonc --kv.version=1.0.0 --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"
 ```
 
-## Install & use as cli
+## Install & Use as CLI
+
+Install
 
 ```bash
 deno install -g jsr:@codemonument/update-denoconfig
+```
+
+Update (with -f flag to force install)
+
+```bash
+deno install -gf jsr:@codemonument/update-denoconfig
+```
+
+Run the cli
+
+```bash
 update-denoconfig --config ./deno.jsonc --kv.version=1.0.0 --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"
 ```
 
