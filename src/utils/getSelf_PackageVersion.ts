@@ -13,7 +13,15 @@ export async function getSelf_PackageVersion() {
   const thisPackageRoot = getSelf_PackageRootUrl();
   const thisPackageDenoconfig = join(thisPackageRoot, "deno.jsonc");
 
-  const thisDenoconfig = parse(await Deno.readTextFile(thisPackageDenoconfig));
+  let content = "";
+
+  if (thisPackageDenoconfig.protocol !== "file:") {
+    content = await fetch(thisPackageDenoconfig).then((res) => res.text());
+  } else {
+    content = await Deno.readTextFile(thisPackageDenoconfig);
+  }
+
+  const thisDenoconfig = parse(content);
 
   const schema = z.object({
     version: z.string(),

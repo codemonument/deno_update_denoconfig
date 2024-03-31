@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 - 2024-03-31
+
+- make getSelf_PackageVersion function able to load deno.jsonc of this package from a web url
+
 ## 1.0.1 - 2024-03-30
 
 - mark "run without installation" as WIP in README.md
