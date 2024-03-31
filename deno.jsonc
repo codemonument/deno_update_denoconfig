@@ -10,8 +10,6 @@
     "test": "deno test -A",
     // testu = update snapshots while testing
     "testu": "deno test -A -- --update",
-    // seldomly used tasks
-    "vendor": "deno vendor ./scripts/deps-to-vendor.ts",
     "demo": "deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc main.ts --config=test/demo/deno.jsonc --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"",
     // publishing tasks
     "dry": "deno publish --dry-run",
@@ -32,7 +30,6 @@
     "@std/testing": "jsr:@std/testing@^0.221.0",
     "@std/url": "jsr:@std/url@^0.221.0",
     "deepmerge-ts": "npm:deepmerge-ts@^5.1.0",
-    "https://deno.land/": "./vendor/deno.land/",
     "json5-writer": "npm:json5-writer@^0.2.0",
     "solid-js": "npm:solid-js@^1.8.16",
     "zod": "npm:zod@^3.22.4"
@@ -45,8 +42,7 @@
       "./main.ts",
       "./deno.jsonc",
       "./deno.lock",
-      "./src",
-      "./vendor"
+      "./src"
     ],
     "exclude": [
       "**/*.test.ts",
