@@ -6,7 +6,6 @@
   },
   "tasks": {
     "start": "deno run --allow-read=.,deno.jsonc main.ts ",
-    "start-local": "deno run  --no-remote main.ts",
     "test": "deno test -A",
     // testu = update snapshots while testing
     "testu": "deno test -A -- --update",
