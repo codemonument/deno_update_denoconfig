@@ -1,11 +1,16 @@
 import { updateConfig } from "@/src/features/update-config.ts";
+import {
+  cliVersion,
+  setCliVersion,
+  setLogMode,
+} from "@/src/utils/global_config.ts";
 import { zodType } from "@codemonument/cliffy-zod-option/zodType";
 import { Command } from "@codemonument/cliffy/command";
 import { z } from "zod";
 import { getSelf_PackageVersion } from "./utils/getSelf_PackageVersion.ts";
-import { cliVersion } from "@/src/utils/global_config.ts";
-import { setLogMode } from "@/src/utils/global_config.ts";
-import { setCliVersion } from "@/src/utils/global_config.ts";
+
+const version = await getSelf_PackageVersion();
+setCliVersion(version);
 
 export const LogModeSchema = z.enum([
   "debug",
@@ -62,8 +67,6 @@ export async function startCli(args: string[] = Deno.args) {
       }
 
       setLogMode(options.logMode);
-      const version = await getSelf_PackageVersion();
-      setCliVersion(version);
 
       await updateConfig(options.config, options.kv);
     });
