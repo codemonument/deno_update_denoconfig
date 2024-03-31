@@ -10,7 +10,7 @@
     "test": "deno test -A",
     // testu = update snapshots while testing
     "testu": "deno test -A -- --update",
-    "demo": "deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc main.ts --allow-net=jsr.io --config=test/demo/deno.jsonc --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"",
+    "demo": "deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io main.ts --config=test/demo/deno.jsonc --kv.version=0.0.2, --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"",
     // publishing tasks
     "dry": "deno publish --dry-run",
     "update-version": "deno run --allow-read=.,deno.jsonc, --allow-write=.,deno.jsonc --allow-net=jsr.io main.ts --config=./deno.jsonc --kv.version=1.0.5",
