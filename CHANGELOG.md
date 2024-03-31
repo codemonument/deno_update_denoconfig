@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6 - 2024-03-31
+
+- fix problem with loading own package version from web url at jsr.io
+
 ## 1.0.5 - 2024-03-31
 
 - add complete log level management to the cli

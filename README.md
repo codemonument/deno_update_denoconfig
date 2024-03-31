@@ -2,14 +2,12 @@
 
 A package to update deno.json or deno.jsonc config files easily, without loosing comments.
 
-## Run in deno without installation (WIP)
-
-CAUTION: should work, but for some reason there is a problem!
+## Run in deno without installation
 
 Note: Please adjust the `--config` path to your actual deno.jsonc file path and the `--kv` key-value pairs to your desired changes.
 
 ```bash
-deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.5 --config ./deno.jsonc --kv.version=1.0.0 --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"
+deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.6 --config ./deno.jsonc --kv.version=1.0.0 --kv.tasks.echo=\"echo \\\"Hello World!\\\"\"
 ```
 
 ## Install & Use as CLI
@@ -17,13 +15,13 @@ deno run --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io
 Install
 
 ```bash
-deno install -g deno install -g --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.5
+deno install -g deno install -g --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.6
 ```
 
 Update (with -f flag to force install)
 
 ```bash
-deno install -gf --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.5
+deno install -gf --allow-read=.,deno.jsonc --allow-write=.,deno.jsonc --allow-net=jsr.io jsr:@codemonument/update-denoconfig@1.0.6
 ```
 
 Run the cli
@@ -95,3 +93,7 @@ If you need more advanced editing functionality in the cli or in the exported `u
 4. Commit
 5. Tag the commit with the new version
 6. Push the commit and tag => Github Actions will automatically publish the new version to jsr
+
+## TODO (bjesuiter)
+
+- [ ] - branch out "asset loading from jsr" into it's own package
